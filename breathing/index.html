@@ -1,0 +1,219 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123790385-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-123790385-1');
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="breathing.css" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <title>Meditate</title>
+</head>
+
+<body>
+    <a id="sidebar-toggle" tabindex="0"><span></span></a>
+    <main id="main">
+        <div id="sidebar">
+            <div></div>
+            <ul>
+                <li>
+                    <table>
+                        <tr>
+                            <td><input type="text" name="word" value="inhale"/></td>
+                            <td><input type="number" name="time" min="2" max="10" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="word" value="hold"/></td>
+                            <td><input type="number" name="time" min="0" max="10" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="word" value="exhale"/></td>
+                            <td><input type="number" name="time" min="2" max="10" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="word" value="pause"/></td>
+                            <td><input type="number" name="time" min="0" max="10" value="4"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="button" value="reset" name="reset" onclick="resetSettings()"/></td>
+                            <td><input type="button" value="save" name="save" onclick="saveSettings()"/></td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+        </div>
+        <div id="main-view">
+            <div id="circle">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="50"/>
+                </svg>
+            </div>
+            <h2 id="text">ready</h2>
+        </div>
+    </main>
+    <script type="text/javascript" src="NoSleep.js"></script>
+    <script type="text/javascript" src="breathing.js"></script>
+</body>
+
+</html> -->
+
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Meditation</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Quicksand|Lilita+One|Montserrat" rel=" stylesheet">
+  <link rel="stylesheet" href="../amor/css1/styles.css">
+  <link rel="stylesheet" href="../amor/css1/page1.css">
+  <style type="text/css">
+    .body{
+      background-color: white;
+    }
+
+h1 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-family: sans-serif;
+}
+
+.Circle {
+  width: 160px;
+  height: 160px;
+  background: white;
+  -moz-border-radius: 80px;
+  -webkit-border-radius: 80px;
+  border-radius: 80px;
+  margin: 100px auto;
+  animation: grow-circle 5s infinite;
+  animation-play-state: grow-circle 1s paused;
+}
+
+@keyframes grow-circle {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(2);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.Exhale {
+  animation: exhale 5s infinite;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@keyframes exhale {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*audio { 
+   display:none;
+}*/
+
+.Inhale {
+  animation: inhale 5s infinite;
+  color: black;
+  font-family: sans-serif;
+  position: absolute;
+  margin: 0;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@keyframes inhale {
+  0% {
+    opacity: 1;
+  }
+  32% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0;
+  }
+  82% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+  </style>
+
+</head>
+
+<body>
+
+  <div>
+  <h1>BREATHING EXERCISE</h1><br><br>
+  <div class="Circle">
+    <p class="Exhale">Exhale</p>
+    <p class="Inhale">Inhale</p>
+  </div>
+  </div>
+
+<audio autoplay="true" src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<!--   <div class="page1">
+    <div class="side1">
+      <div class="heading"><span>EX</span>PRO</span></div>
+      <a href="camera.html" class="btn" style="font-size:25px">Workout</a>
+      <a href="breathe.html" class="btn" style="font-size:25px ">Breathing Exercise</a>
+      <a href="ppt.html" class="btn" style="font-size:25px">Presentation</a>
+    </div>
+  </div> -->
+<!--   <script src="breathing.js"></script> -->
+</body>
+
+</html>

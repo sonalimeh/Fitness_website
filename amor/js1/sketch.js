@@ -19,7 +19,7 @@ function setup() {
     // Create a new poseNet method with a single detection
     poseNet = ml5.poseNet(video, modelReady);
     // This sets up an event that fills the global variable "poses"
-    // with an array every time new poses are detected
+    // with an array every time new poses are detected5
     poseNet.on('pose', function (results) {
         poses = results;
     });
@@ -82,7 +82,7 @@ function drawKeyPoints() {
 
             if ((15 < poses[0].pose.rightEye.y - poses[0].pose.leftEye.y && poses[0].pose.rightEye.y - poses[0].pose.leftEye.y < 30) && c === 1 && d === 0) {
                 a = 1; b = 0; c = 0;
-                if(move_count != 5)
+                if(move_count != 100)
                     move_count++;
             }
 
@@ -94,7 +94,7 @@ function drawKeyPoints() {
                 $("#counting-id").fadeIn();
             });
         }
-        if (move_count == 5 && saved == false) {
+        if (move_count == 100 && saved == false) {
 
             $("#counting-id").fadeOut("slow", () => {
                 $("#counting-id").html(move_count);

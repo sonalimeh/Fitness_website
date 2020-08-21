@@ -65,36 +65,45 @@ function drawKeyPoints() {
     if (poses.length != 0) {
             a = 1;
 
-
-            if (abs(poses[0].pose.rightEar.y - poses[0].pose.rightShoulder.y) < 10 && a === 1) {
+            
+        
+            if ((poses[0].pose.leftWrist.y - poses[0].pose.leftShoulder.y) >70 && a === 1) {
                 b = 1; c = 0; a = 0;
             }
-
-            if (abs(poses[0].pose.leftAnkle.y - poses[0].pose.leftWrist.y) < 30 && abs(poses[0].pose.rightAnkle.y - poses[0].pose.rightWrist.y) < 30 && b === 1) {
-                c = 1; b = 0; a = 0;
+        
+             if ((poses[0].pose.leftWrist.y - poses[0].pose.leftShoulder.y) < 90 && b === 1) {
+                b = 0; c = 1; a = 0;
             }
-
-            if (abs(poses[0].pose.rightEar.y - poses[0].pose.rightShoulder.y) > 25 && c === 1) {
+            
+            if ((poses[0].pose.rightWrist.y - poses[0].pose.rightShoulder.y) > 105 && c === 1) {
                 a = 1; c = 0; b = 0;
-                if(move_count < 5) 
+                if(move_count < 100) 
                     move_count++;
             }
+            
+    
         }
 
 
         if (move_count != prev) {
             
             $("#counting-id").fadeOut("slow", () => {
-                $("#counting-id").html(move_count);
+                $("#counting-id").html(	'&#x263A;&#xFE0F;');
                 $("#counting-id").fadeIn();
+                
+                
+                if(move_count%2==0){
+                    
+                     $("#counting-id").html('');
+                    
+                }
             });
         }
-        if (move_count == 5 && saved == false) {
+        
            
-            var audio = new Audio('C:/Users/Win10/Desktop/datasets/test.wav');
-            audio.play();
+           
             saved = true;
-        }
+        
         prev = move_count;
 }
 

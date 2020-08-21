@@ -70,8 +70,8 @@ canvas{
 }
 
 img{
-  margin-top:10vh;
-  box-shadow: 0 0 20px #000;
+  bottom:0;
+ 
 }
 
 #results{

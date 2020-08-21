@@ -76,7 +76,7 @@ function drawKeyPoints(){
             if (poses[0].pose.leftWrist.y < (poses[0].pose.leftShoulder.y - 30) && poses[0].pose.rightWrist.y < (poses[0].pose.rightShoulder.y - 30) && c === 1) {
                 a = 1; b = 0; c = 0;
                 
-                if(move_count < 5)
+                if(move_count < 100)
                     move_count++;
             }
         }
@@ -89,7 +89,7 @@ function drawKeyPoints(){
                 $("#counting-id").fadeIn();
             });
         }
-        if (move_count == 5 && saved == false) {
+        if (move_count == 100 && saved == false) {
 
             $("#counting-id").fadeOut("slow", () => {
                 $("#counting-id").html(move_count);
